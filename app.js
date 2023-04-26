@@ -67,7 +67,7 @@ const createSaveBtn = (saveUrl) => {
   const link = document.createElement("a"); // Create link element
   link.id = "saveLink"; // Set link ID for future reference
   link.href = saveUrl; // Set download URL
-  link.download = "qrcode"; // Set download filename
+  link.download = "qrcode.png"; // Set download filename
   link.innerHTML = "Download QR Code"; // Set link text content
   btn.appendChild(link); // Add link to button
   document.getElementById("generated").appendChild(btn); // Add button to parent container
