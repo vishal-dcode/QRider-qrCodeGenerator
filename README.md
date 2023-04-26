@@ -4,8 +4,8 @@ QRider is a simple web app that generates QR codes from URLs using the QRCode li
 
 ## Demo
 
-Check out the [demo page](https://your-username.github.io/qr-code-generator/) to see the app in action.
-![Alt text](https://i.ibb.co/YtdB3KN/QRider-preview-2.png)
+Check out the [demo page](https://vishal-dcode.github.io/QRider-qrCodeGenerator/) to see the app in action.
+![Alt text](https://i.ibb.co/sKwJjPJ/QRider-preview.png)
 
 ## Getting Started
 
