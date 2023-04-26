@@ -27,7 +27,7 @@ const onGenerateSubmit = (e) => {
       setTimeout(() => {
         const saveUrl = qr.querySelector("img").src; // Get QR code image source URL
         createSaveBtn(saveUrl); // Create save button to download QR code as image
-      });
+      }, 50);
     }, 1500);
   }
 };
@@ -66,7 +66,7 @@ const createSaveBtn = (saveUrl) => {
   link.id = "saveLink"; // Set link ID for future reference
   link.classList = "btn";
   link.href = saveUrl; // Set download URL
-  link.download = "qrcode"; // Set download filename
+  link.download = "qrcode.png"; // Set download filename
   link.innerHTML = "Download QR Code"; // Set link text content
   document.getElementById("generated").appendChild(link); // Add button to parent container
 };
