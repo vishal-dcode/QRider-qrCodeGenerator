@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="app.js" defer></script>
+    <title>QRider - QR Code Generator</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="ctr-left">
+        <div></div>
+        <div>
+          <div>
+            <img src="./assets/logo.png" alt="logo" />
+            <p>QRider's mission is to meet people around the world and help them to understand and use QR Codes in their daily lives.</p>
+          </div>
+          <div>
+            <p><strong>Enter your URL below:</strong></p>
+            <form id="generate-form" action="">
+              <input type="url" name="" id="url" placeholder="Enter a URL here..." />
+              <select name="" id="size">
+                <option value="100">100x100</option>
+                <option value="200">200x200</option>
+                <option value="300">300x300</option>
+                <option value="400">400x400</option>
+                <option value="500" selected>500x500</option>
+                <option value="600">600x600</option>
+              </select>
+              <button type="submit">Generate QR Code</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="generated" class="ctr-right">
+        <!-- Loading -->
+        <div id="spinner" class="snippet" data-title="dot-typing">
+          <div class="stage">
+            <div class="dot-typing"></div>
+          </div>
+        </div>
+
+        <!-- QR Output -->
+        <div id="qrcode">
+          <img class="disabled" src="https://i.ibb.co/xqYpznN/qrcode.png" alt="qrcode" border="0" />
+          <button class="disabled"><a href="#">Download QR Code</a></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
