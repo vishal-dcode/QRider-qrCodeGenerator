@@ -26,8 +26,8 @@ const onGenerateSubmit = (e) => {
       generateQRCode(url, size);
       setTimeout(() => {
         const saveUrl = qr.querySelector("img").src; // Get QR code image source URL
-        createDownloadBtn(saveUrl); // Create download button to download QR code as image
-      }, 50);
+        createSaveBtn(saveUrl); // Create save button to download QR code as image
+      });
     }, 1500);
   }
 };
@@ -46,7 +46,6 @@ const clearUI = () => {
   qr.innerHTML = ""; // Clear QR code container
   const saveBtn = document.getElementById("saveLink"); // Check if save button exists
   if (saveBtn) {
-    // const parentElement = saveBtn.parentElement; // Select parent element of saveBtn
     saveBtn.remove(); // Remove save button (if it exists)
   }
 };
@@ -61,14 +60,14 @@ const hideSpinner = () => {
   document.getElementById("spinner").style.display = "none";
 };
 
-// Create download button to download QR code as image
-const createDownloadBtn = (downloadUrl) => {
-  const btn = document.createElement("button"); // Create button element
+// Create save button to download QR code as image
+const createSaveBtn = (saveUrl) => {
   const link = document.createElement("a"); // Create link element
-  link.href = downloadUrl; // Set download URL
-  link.download = "qrcode.png"; // Set download filename
+  link.id = "saveLink"; // Set link ID for future reference
+  link.classList = "btn";
+  link.href = saveUrl; // Set download URL
+  link.download = "qrcode"; // Set download filename
   link.innerHTML = "Download QR Code"; // Set link text content
-  // btn.appendChild(link); // Add link to button
   document.getElementById("generated").appendChild(link); // Add button to parent container
 };
 
