@@ -46,8 +46,8 @@ const clearUI = () => {
   qr.innerHTML = ""; // Clear QR code container
   const saveBtn = document.getElementById("saveLink"); // Check if save button exists
   if (saveBtn) {
-    const parentElement = saveBtn.parentElement; // Select parent element of saveBtn
-    parentElement.remove(); // Remove save button (if it exists)
+    // const parentElement = saveBtn.parentElement; // Select parent element of saveBtn
+    saveBtn.remove(); // Remove save button (if it exists)
   }
 };
 
@@ -68,42 +68,8 @@ const createDownloadBtn = (downloadUrl) => {
   link.href = downloadUrl; // Set download URL
   link.download = "qrcode.png"; // Set download filename
   link.innerHTML = "Download QR Code"; // Set link text content
-  btn.appendChild(link); // Add link to button
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    const link = e.target.querySelector("a");
-    const url = link.href;
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "qrcode.png";
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
-  }); // Add click event listener to simulate download
-  document.getElementById("generated").appendChild(btn); // Add button to parent container
-};
-
-// Create save button to download QR code as image
-const createSaveBtn = (saveUrl) => {
-  const btn = document.createElement("button"); // Create button element
-  const link = document.createElement("a"); // Create link element
-  link.id = "saveLink"; // Set link ID for future reference
-  link.href = saveUrl; // Set download URL
-  link.download = "qrcode.png"; // Set download filename
-  link.innerHTML = "Download QR Code"; // Set link text content
-  btn.appendChild(link); // Add link to button
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    const link = e.target.querySelector("a");
-    const url = link.href;
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "qrcode.png";
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
-  }); // Add click event listener to simulate download
-  document.getElementById("generated").appendChild(btn); // Add button to parent container
+  // btn.appendChild(link); // Add link to button
+  document.getElementById("generated").appendChild(link); // Add button to parent container
 };
 
 hideSpinner(); // Hide loading spinner by default
