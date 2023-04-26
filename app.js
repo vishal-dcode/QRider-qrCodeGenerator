@@ -26,8 +26,8 @@ const onGenerateSubmit = (e) => {
       generateQRCode(url, size);
       setTimeout(() => {
         const saveUrl = qr.querySelector("img").src; // Get QR code image source URL
-        createSaveBtn(saveUrl); // Create save button to download QR code as image
-      });
+        createDownloadBtn(saveUrl); // Create download button to download QR code as image
+      }, 50);
     }, 1500);
   }
 };
